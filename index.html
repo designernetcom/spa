@@ -11,9 +11,10 @@
 <link href="plugins/revolution/css/navigation.css" rel="stylesheet" type="text/css"><!-- REVOLUTION NAVIGATION STYLES -->
 <link href="css/style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Lusitana:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-<!-- 
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> -->
+
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 <!-- Responsive -->
@@ -21,7 +22,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+<style>
+    .youtube-section {
+        padding: 60px 0;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
 
+    .youtube-section .sec-title {
+        margin-bottom: 20px;
+    }
+
+    .youtube-btn {
+        display: inline-block;
+        padding: 12px 20px;
+        background-color: #FF0000;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .youtube-btn i {
+        margin-right: 8px;
+    }
+
+    .youtube-btn:hover {
+        background-color: #cc0000;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        position: relative;
+        width: 60%;
+        max-width: 700px;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    .close:hover {
+        color: red;
+    }
+</style>
 <style>
 	body {
     font-family: 'Lusitana', Georgia, serif;
@@ -138,7 +206,7 @@ h4{
 						<!-- Slide 1 -->
 						<li data-index="rs-1" data-transition="zoomout">
 							<!-- MAIN IMAGE -->
-							<img src="images/Images/OrangeSpa25-82 1.jpg" alt="" class="rev-slidebg">
+							<img src="images/Images/OrangeSpa25-82-1-1.jpg" alt="" class="rev-slidebg">
 
 
 							<div class="tp-caption" 
@@ -455,7 +523,7 @@ h4{
   <!--End About Section -->
 
 	<!-- About Section -->
-	<section class="about-section-two">
+	<!-- <section class="about-section-two">
 		
 		<div class="auto-container">
 			<div class="outer-box">
@@ -484,25 +552,52 @@ h4{
 								<div class="text">At Orange Spa, we believe in the healing power of touch and nature’s wisdom to restore balance and enhance your quality of life. Step into our serene space and embark on a journey of relaxation, renewal, and self-care.</div>
 							</div>
 							<div class="row">
-								<div class="list-box col-sm-4">
-									<div class="inner">
-										<figure class="thumb"><img src="images/resource/price2-5.png" alt="Image"></figure>
-										<h4 class="title">Spa</h4>
-									</div>
-								</div>
-								<div class="list-box col-sm-4">
-									<div class="inner">
-										<figure class="thumb"><img src="images/resource/price3-6.png" alt="Image"></figure>
-										<h4 class="title">Ayurveda</h4>
-									</div>
-								</div>
-								<div class="list-box col-sm-4">
-									<div class="inner">
-										<figure class="thumb"><img src="images/resource/price2-4.png" alt="Image"></figure>
-										<h4 class="title">Beauty</h4>
-									</div>
-								</div>
-							</div>
+    <div class="list-box col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="inner">
+            <figure class="thumb"><img src="images/resource/price2-5.png" alt="Image"></figure>
+            <h4 class="title">Spa</h4>
+        </div>
+    </div>
+    <div class="list-box col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="inner">
+            <figure class="thumb"><img src="images/resource/price3-6.png" alt="Image"></figure>
+            <h4 class="title">Ayurveda</h4>
+        </div>
+    </div>
+    <div class="list-box col-lg-4 col-md-4 col-sm-6 col-12">
+        <div class="inner">
+            <figure class="thumb"><img src="images/resource/price2-4.png" alt="Image"></figure>
+            <h4 class="title">Beauty</h4>
+        </div>
+    </div>
+</div>
+
+<style>
+    .list-box {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .inner {
+        width: 100%;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    }
+    .thumb img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    @media (max-width: 576px) {
+        .inner {
+            padding: 10px;
+        }
+    }
+</style>
+
 							<div class="author-box">
 								<div class="inner">
 							
@@ -522,13 +617,19 @@ h4{
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!--End About Section -->
 
 
 
 
-	<!-- Package Section -->
+
+
+<!-- Package Section -->
+
+<!-- End Package Section -->
+
+<!-- Package Section -->
 	<section class="packages-section" id="services">
 	
 		<div class="auto-container">
@@ -550,27 +651,19 @@ h4{
                 </a>
             </figure>
         </div>
+		
         <div class="content-box">
             <ul class="post-meta">
                 <li class=""><i class="fa-solid fa-watch"></i> 90 minutes</li>
             </ul>
-            <h4 class="name"><a href="">Rejuvenating Ayurveda Abhyangam</a></h4>
-            <a class="read-more" href="" onmouseover="showDescription()" onmouseout="hideDescription()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description" class="description" style="display: none;">Rejuvenating Ayurveda Abhyangam is a traditional oil massage that
-balances the body’s energies, promoting relaxation and detoxification. It
-nourishes the skin, improves circulation, and restores harmony between
-mind and body. Removes fatigue, boost the immune system, delays aging
-and improves mental health</p>
+		 <h4 class="name"><a href="">Rejuvenating Ayurveda Abhyangam</a></h4>
+           
+            <a class="read-more" href="" >Rejuvenating Ayurveda Abhyangam is a traditional oil massage that
+balances the body’s energies, promoting relaxation and detoxification.Read More </a>
+            
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
 
 					<!-- Service Block -->
 					<div class="package-block">
@@ -594,14 +687,14 @@ Massage</a></h4>
 
 								
 							</div>
-							 <a class="read-more" href="" onmouseover="showDescription1()" onmouseout="hideDescription1()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description1" class="description1" style="display: none;">Toning Swedish massage combines medium pressure with techniques
+							
+            <p >Toning Swedish massage combines medium pressure with techniques
 like kneading, circular movements, and vibrations to relax, energize,
 and tone the body. It enhances circulation, reduces tension, and helps
 improve muscle tone.</p>
-						</div>
+						</div> 
 					</div>
-
+           
 					<!-- Service Block -->
 					<div class="package-block">
 						<div class="inner-box text-center">
@@ -622,8 +715,8 @@ improve muscle tone.</p>
 Massage</a></h4>
 								
 							</div>
-							<a class="read-more" href="" onmouseover="showDescription2()" onmouseout="hideDescription2()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description2" class="description2" style="display: none;">Relaxing Aroma massage uses soothing essential oils paired with gentle,
+							
+            <p >Relaxing Aroma massage uses soothing essential oils paired with gentle,
 calming strokes to promote relaxation and reduce stress. The aromatic
 scents enhance the therapeutic effects, leaving both mind and body feeling
 rejuvenated.</p>
@@ -650,8 +743,8 @@ rejuvenated.</p>
 Massage</a></h4>
 								
 							</div>
-								<a class="read-more" href="" onmouseover="showDescription3()" onmouseout="hideDescription3()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description3" class="description3" style="display: none;">Revitalizing Thai massage combines acupressure, stretching, and deep
+								
+            <p >Revitalizing Thai massage combines acupressure, stretching, and deep
 tissue techniques to boost energy and flexibility. It helps relieve tension,
 improve circulation, and promote overall physical and mental well-being.</p>
 							
@@ -678,8 +771,8 @@ improve circulation, and promote overall physical and mental well-being.</p>
 Deep Tissue Massage</a></h4>
 								
 							</div>
-								<a class="read-more" href="" onmouseover="showDescription4()" onmouseout="hideDescription4()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description4" class="description4" style="display: none;">Pain relief deep tissue massage targets the deeper layers of muscle and
+								
+            <p >Pain relief deep tissue massage targets the deeper layers of muscle and
 connective tissue to alleviate chronic pain and tension. It helps to release
 knots, improve mobility, and promote faster muscle recovery. It also known
 as Sport massage.</p>
@@ -706,8 +799,8 @@ as Sport massage.</p>
 Balinese Massage</a></h4>
 								
 							</div>
-								<a class="read-more" href="" onmouseover="showDescription5()" onmouseout="hideDescription5()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description5" class="description5" style="display: none;">Energy Booster Balinese massage blends gentle stretching, acupressure, and
+								
+            <p >Energy Booster Balinese massage blends gentle stretching, acupressure, and
 soothing strokes to stimulate energy flow and promote relaxation. It
 revitalizes the body, reduces stress, and enhances overall vitality.</p>
 						</div>
@@ -732,8 +825,8 @@ revitalizes the body, reduces stress, and enhances overall vitality.</p>
 								<h4 class="name"><a href="">Orangespa Signature
 Therapy</a></h4>
 							</div>
-								<a class="read-more" href="" onmouseover="showDescription6()" onmouseout="hideDescription6()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
-            <p id="description6" class="description" style="display: none;">Experience our rejuvenating treatment that combines stretching, deep tissue
+								
+            <p >Experience our rejuvenating treatment that combines stretching, deep tissue
 massage, foot stick massage, face clean-up, and steam to enhance blood
 circulation, alleviate stress, and encourage profound relaxation. Indulge
 yourself and elevate your mental well-being.</p>
@@ -761,9 +854,9 @@ Massage</a></h4>
 								
 							</div>
 						
-								 <a class="read-more" href="javascript:void(0);" onclick="toggleDescription()">Read More <i class="icon fa-regular fa-angle-right"></i></a>
+						
       
-            <p id="description7" class="description" style="display: none;">Experience the healing touch of Lomi Lomi, a traditional Hawaiian massage
+            <p >Experience the healing touch of Lomi Lomi, a traditional Hawaiian massage
 that soothes both body and soul. With rhythmic, flowing strokes that mimic
 ocean waves, it releases tension, improves circulation, and restores
 harmony, leaving you deeply relaxed and rejuvenated."
@@ -776,40 +869,52 @@ harmony, leaving you deeply relaxed and rejuvenated."
 	</section>
 	<!-- End Package Section-->
 
+<!-- YouTube Section -->
+<section class="youtube-section" id="youtube">
+    <div class="auto-container text-center">
+        <div class="sec-title">
+            <figure class="image"><img src="images/icons/icon1.png" alt="YouTube"></figure>
+            <!-- <span class="sub-title">tour</span> -->
+            <h4 class="words-slide-up text-split">Virtual Tour of Orange spa</h4>
+           
+        </div>
+        
+        <!-- YouTube Button to Open Modal -->
+        <a href="javascript:void(0);" class="youtube-btn" onclick="openYouTubeModal()">
+            <i class="fa-brands fa-youtube"></i> Watch on YouTube
+        </a>
+    </div>
+</section>
+
+<!-- YouTube Modal -->
+<div id="youtubeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeYouTubeModal()">&times;</span>
+        <iframe id="youtubeVideo" width="100%" height="400px" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- CSS for the YouTube Modal -->
+
+
+
+
+
 
     <!-- Gallery Section -->
   <section class="gallery-section pt-100" id="gallery">
     <div class="outer-box">
       <div class="row">
 		
-        <div class="col-xl-6">
-			<h4 class="text-center">Virtual Tour of Orange spa</h4>
-         		<div class="auto-container about-section-two">
-			<div class="outer-box">
-				
-				<div class="row">
-					
-								<div class="image-column col-lg-12">
-					<div class="inner-column">
-    <div class="image-box">
-        <div class="play-box">
-            <a href="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" 
-               class="play-btn-two wow zoomIn" 
-               data-fancybox 
-               data-type="iframe">
-                <i class="icon fa-solid fa-play" aria-hidden="true"></i>
-                <div class="icon-text-2"></div>
-            </a>
-        </div>
-    </div>
-</div>
-
-					</div>
-					
-				</div>
-			</div>
-		</div>
-
+             <div class="gallery-block col-xl-6">
+          <div class="inner-box">
+            <div class="image-box">
+              <figure class="image">
+                <a class="lightbox-image" href="images/Images/OrangeSpa25-47.jpg"><img src="images/Images/OrangeSpa25-47.jpg" alt="Image"></a>
+              </figure>
+              <a class="icon" href="images/Images/OrangeSpa25-47.jpg"><i class="fa-sharp fa-light fa-eye"></i></a>
+            </div>
+          </div>
         </div>
         <!-- pricing-block -->
         <div class="gallery-block col-xl-6">
@@ -1001,7 +1106,7 @@ harmony, leaving you deeply relaxed and rejuvenated."
                   <figure class="image"><img src="images/icons/icon1.png" alt="Image"></figure>
                   <span class="sub-title">Appointment</span>
                   <h3 class="words-slide-up text-split">Book Now</h3>
-                  <div class="text">Proin efficitur, mauris vel condimentum pulvinar, velit <br> orci consectetur ligula.</div>
+                  <div class="text"></div>
                 </div>
                 <!--Contact Form-->
                 <form id="contact_form" name="contact_form" class="" action="https://html.kodesolution.com/2024/purerelax-html/includes/sendmail.php" method="post">
@@ -1129,7 +1234,7 @@ harmony, leaving you deeply relaxed and rejuvenated."
 					<!--Footer Column-->
 					<div class="footer-column col-xl-3  col-lg-6 col-md-6 col-sm-6">
 						<div class="footer-widget about-widget">
-							<div class="logo"><a href="index.html"><img src="images/Orange Spa Final File 2.png" alt=""></a></div>
+							<div class="logo"><a href="index.html"><img src="images/Orange Spa Final File 2.png" alt="" style="width: 200px;"></a></div>
 							<div class="text"> </div>
 							<div class="subscribe-form">
 								<form method="post" action="#">
@@ -1142,8 +1247,8 @@ harmony, leaving you deeply relaxed and rejuvenated."
 							<ul class="social-icon">
 								<li><a href="#"><i class="icon fa fa-x"></i></a></li>
 								<li><a href="#"><i class="icon fab fa-facebook-f"></i></a></li>
-								<li><a href="#"><i class="icon fab fa-pinterest-p"></i></a></li>
-								<li><a href="#"><i class="icon fab fa-vimeo-v"></i></a></li>
+								<!-- <li><a href="#"><i class="icon fab fa-pinterest-p"></i></a></li>
+								<li><a href="#"><i class="icon fab fa-vimeo-v"></i></a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -1155,7 +1260,7 @@ harmony, leaving you deeply relaxed and rejuvenated."
 							<ul class="user-links">
 								<li><a href="#">About</a></li>
 								<li><a href="#">Pricing</a></li>
-								<li><a href="#">Shop</a></li>
+								<li><a href="#">services</a></li>
 								<li><a href="#">Contact</a></li>
 							</ul>
 						</div>
@@ -1166,9 +1271,9 @@ harmony, leaving you deeply relaxed and rejuvenated."
 						<div class="footer-widget timetable-widget">
 							<h5 class="widget-title">Open Hours</h5>
 							<ul class="timetable">
-								<li>Monday to Friday : <span>09:00-20:00</span></li>
-								<li>Saturday: <span>09:00-18:00</span></li>
-								<li>Sunday: <span>09:00-18:00</span></li>
+								<li>Monday to Friday : <span>10.30 a.m -9:00 p.m</span></li>
+								<li>Saturday: <span>10.30 a.m-9:00 p.m</span></li>
+								<li>Sunday: <span>10.30 a.m -9:00 p.m</span></li>
 							</ul>
 						</div>
 					</div>
@@ -1317,6 +1422,45 @@ Chowk, Bavdhan, Pune. PIN - 411021</div>
         } else {
             desc.style.display = "none";
         }
+    }
+</script>
+<!-- Include Owl Carousel CSS & JS -->
+css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Initialize Owl Carousel -->
+<script>
+    $(document).ready(function(){
+        $(".packages-carousel").owlCarousel({
+            loop: true,         // Infinite loop
+            margin: 20,         // Space between slides
+            nav: false,         // Hide navigation arrows
+            dots: true,         // Show dots navigation
+            autoplay: true,     // Auto slide
+            autoplayTimeout: 3000, // Slide every 3 seconds
+            autoplayHoverPause: true, // Pause on hover
+            responsive: {
+                0: { items: 1 },  // 1 item on small screens
+                600: { items: 2 }, // 2 items on medium screens
+                1000: { items: 4 } // 3 items on large screens
+            }
+        });
+    });
+</script>
+<!-- JavaScript for Modal Functionality -->
+<script>
+    function openYouTubeModal() {
+        var modal = document.getElementById("youtubeModal");
+        var video = document.getElementById("youtubeVideo");
+        video.src = "https://www.youtube.com/embed/k85u9uP-ogU?autoplay=1"; // Embed YouTube Video
+        modal.style.display = "flex";
+    }
+
+    function closeYouTubeModal() {
+        var modal = document.getElementById("youtubeModal");
+        var video = document.getElementById("youtubeVideo");
+        video.src = ""; // Stop video when modal closes
+        modal.style.display = "none";
     }
 </script>
 </body>
